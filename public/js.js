@@ -12,6 +12,3 @@ $("#button").on("click",function(){
         }
     })
 })
-setInterval(function(){
-    $("#button").click();
-},500)

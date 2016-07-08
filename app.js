@@ -52,3 +52,24 @@ function getTime(){
 	sec=date.getSeconds()<10?"0"+date.getSeconds():date.getSeconds();
 	return year+"-"+mon+"-"+day+" "+hour+":"+min+":"+sec+" ";
 }
+//查询sql语句
+var pool = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'sees7&chanting',
+    database: 'projectKDB'
+});
+
+function query(strSQL, param, callback) {
+    pool.getConnection(function(err, connection) {
+        connection.query(strSQL, param, function(err, rows, fields) {
+            if (err) throw err;
+            callback(rows, fields);
+            connection.release();
+        });
+    });
+}
+query("SELECT CURTIME()  AS DATE",null,function(rows,fields){
+    console.log(rows,fields);
+});
+exports.query = query;
