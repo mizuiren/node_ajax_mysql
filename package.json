@@ -1,0 +1,13 @@
+{
+  "name": "搭建服务器",
+  "version": "1.0.0",
+  "description": "我的第一个node程序",
+  "respository" : {
+    "type" :"git",
+    "url" :"git@github.com:mizuiren/mizuiren.git"
+  },
+  "license" : "",
+  "dependencies": {
+    
+  }
+}
