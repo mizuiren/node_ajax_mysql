@@ -1,13 +1,28 @@
 {
-  "name": "搭建服务器",
+  "name": "beautiful_node_web",
   "version": "1.0.0",
-  "description": "我的第一个node程序",
-  "respository" : {
-    "type" :"git",
-    "url" :"git@github.com:mizuiren/mizuiren.git"
-  },
-  "license" : "",
+  "description": "Begin build a beautifu node web",
+  "main": "app.js",
   "dependencies": {
-    
-  }
+    "mysql": "^2.11.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizuiren/mizuiren.git"
+  },
+  "keywords": [
+    "node",
+    "web"
+  ],
+  "author": "qiuleqiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mizuiren/mizuiren/issues"
+  },
+  "homepage": "https://github.com/mizuiren/mizuiren#readme"
 }

@@ -2,6 +2,8 @@
 var http=require("http");
 var fs=require("fs");
 var path=require("path");
+var mysql= require('mysql');
+var url= require('url');
 
 var server=http.createServer(function(req,res){
 	var resType;
@@ -23,18 +25,12 @@ var server=http.createServer(function(req,res){
 			readSponse(res,err,data,resType);
 		})
 	}
-	console.log(" ");
-	console.log(getTime()+"发送了一次请求。请求资源"+path.basename(req.url));
-	console.log(" ");
+	console.log("\n"+getTime()+"发送了一次请求。请求资源"+path.basename(req.url)+"\n");
 }).listen(5555);
 
-
-console.log(" ");
-console.log("------------------------------------------------");
-console.log(getTime()+"Node启动成功!");
-console.log(getTime()+"请在浏览器打开localhost:5555");
-console.log("------------------------------------------------");
-console.log(" ");
+console.log("\n------------------------------------------------");
+console.log(getTime()+"Node启动成功!\n"+getTime()+"请在浏览器打开localhost:5555");
+console.log("------------------------------------------------\n");
 
 function readSponse(res,err,data,resType){
 	if(err){

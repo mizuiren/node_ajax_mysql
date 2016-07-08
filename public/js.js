@@ -1,15 +1,17 @@
-
 $("#button").on("click",function(){
     $.ajax({
         url:"a.html",
         type: "GET",
         data: "",
-        dataType: "json",
+        dataType: "html",
         success:function(data){
-            console.log(data);
+            $("body").append(data);
         },
-        err:function(){
+        err:function(err){
             console.log(err);
         }
     })
 })
+setInterval(function(){
+    $("#button").click();
+},500)
