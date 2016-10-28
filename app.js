@@ -27,7 +27,7 @@ var server=http.createServer(function(req,res){
 			readSponse(res,err,data,resType);
 		})
 	}
-	console.log("\n"+getTime()+"发送了一次请求。请求资源"+path.basename(req.url)+"\n");
+	console.log("\n"+getTime()+"发送了一次请求。请求资源"+path.basename(req.url));
 }).listen(port);
 
 console.log("\n------------------------------------------------");
