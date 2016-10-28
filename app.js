@@ -18,8 +18,14 @@ var server=http.createServer(function(req,res){
 		}
 	})
 	if(req.url=="/"){
-		fs.readFile("./x.html",function(err,data){
+		fs.readFile("public/index.html",function(err,data){
 			readSponse(res,err,data,resType);
+		});
+	//提供给外部获取城市的接口
+	}else if(req.url=="/getCity"){
+		query("SELECT * FROM city_ch_tbl",null,function(rows,fields){
+			res.writeHead(200,{"Content-Type":"application/json"});
+			res.end(JSON.stringify(rows));
 		});
 	}else{
 		var url="."+req.url;
