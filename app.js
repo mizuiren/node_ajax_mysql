@@ -27,14 +27,17 @@ var server=http.createServer(function(req,res){
 			readSponse(res,err,data,resType);
 		})
 	}
-	console.log("\n"+getTime()+"发送了一次请求。请求资源"+path.basename(req.url));
+	consoleLog(getTime()+"发送了一次请求。请求资源\"/"+path.basename(req.url)+"\"")
 }).listen(port);
 
-console.log("\n------------------------------------------------");
-console.log(getTime()+"Node启动成功!\n"+getTime()+"请在浏览器打开localhost:"+port);
-console.log("------------------------------------------------\n");
+consoleLog(getTime()+"NodeJs启动成功!\n"+getTime()+"请在浏览器打开localhost:"+port)
 
 //公用方法
+function consoleLog(log){
+	console.log("\n------------------------------------------------");
+	console.log(log);
+	console.log("------------------------------------------------");
+}
 function readSponse(res,err,data,resType){
 	if(err){
 		console.log(err);
