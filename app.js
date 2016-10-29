@@ -66,10 +66,10 @@ function getTime(){
 }
 //查询sql语句
 var pool = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'sees7&chanting',
-    database: 'projectKDB'
+    host: '127.0.0.1',//主机
+    user: 'root',//用户名
+    password: '数据库密码',
+    database: '数据库名'
 });
 
 function query(strSQL, param, callback) {
